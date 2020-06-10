@@ -58,48 +58,48 @@ In EDA, I evaluate following features:
 Extract features from the dataset that will be used for training classification models
 
  
- |-- gender: string (nullable = true)
- |-- label: integer (nullable = true)
- |-- level: string (nullable = true)
- |-- state: string (nullable = true)
- |-- device: string (nullable = true)
- |-- days_since_reg: integer (nullable = true)
- |-- avg_mon_session_count: double (nullable = true)
- |-- avg_mon_sess_duration: double (nullable = true)
- |-- avg_daily_About: double (nullable = false)
- |-- avg_daily_Add_Friend: double (nullable = false)
- |-- avg_daily_Add_to_Playlist: double (nullable = false)
- |-- avg_daily_Downgrade: double (nullable = false)
- |-- avg_daily_Error: double (nullable = false)
- |-- avg_daily_Help: double (nullable = false)
- |-- avg_daily_Home: double (nullable = false)
- |-- avg_daily_Logout: double (nullable = false)
- |-- avg_daily_NextSong: double (nullable = false)
- |-- avg_daily_Roll_Advert: double (nullable = false)
- |-- avg_daily_Save_Settings: double (nullable = false)
- |-- avg_daily_Settings: double (nullable = false)
- |-- avg_daily_Submit_Downgrade: double (nullable = false)
- |-- avg_daily_Submit_Upgrade: double (nullable = false)
- |-- avg_daily_Thumbs_Down: double (nullable = false)
- |-- avg_daily_Thumbs_Up: double (nullable = false)
- |-- avg_daily_Upgrade: double (nullable = false)
- |-- avg_mon_About: double (nullable = false)
- |-- avg_mon_Add_Friend: double (nullable = false)
- |-- avg_mon_Add_to_Playlist: double (nullable = false)
- |-- avg_mon_Downgrade: double (nullable = false)
- |-- avg_mon_Error: double (nullable = false)
- |-- avg_mon_Help: double (nullable = false)
- |-- avg_mon_Home: double (nullable = false)
- |-- avg_mon_Logout: double (nullable = false)
- |-- avg_mon_NextSong: double (nullable = false)
- |-- avg_mon_Roll_Advert: double (nullable = false)
- |-- avg_mon_Save_Settings: double (nullable = false)
- |-- avg_mon_Settings: double (nullable = false)
- |-- avg_mon_Submit_Downgrade: double (nullable = false)
- |-- avg_mon_Submit_Upgrade: double (nullable = false)
- |-- avg_mon_Thumbs_Down: double (nullable = false)
- |-- avg_mon_Thumbs_Up: double (nullable = false)
- |-- avg_mon_Upgrade: double (nullable = false)
+ - |-- gender: string (nullable = true)
+ - |-- label: integer (nullable = true)
+ - |-- level: string (nullable = true)
+ - |-- state: string (nullable = true)
+ - |-- device: string (nullable = true)
+ - |-- days_since_reg: integer (nullable = true)
+ - |-- avg_mon_session_count: double (nullable = true)
+ - |-- avg_mon_sess_duration: double (nullable = true)
+ - |-- avg_daily_About: double (nullable = false)
+ - |-- avg_daily_Add_Friend: double (nullable = false)
+ - |-- avg_daily_Add_to_Playlist: double (nullable = false)
+ - |-- avg_daily_Downgrade: double (nullable = false)
+ - |-- avg_daily_Error: double (nullable = false)
+ - |-- avg_daily_Help: double (nullable = false)
+ - |-- avg_daily_Home: double (nullable = false)
+ - |-- avg_daily_Logout: double (nullable = false)
+ - |-- avg_daily_NextSong: double (nullable = false)
+ - |-- avg_daily_Roll_Advert: double (nullable = false)
+ - |-- avg_daily_Save_Settings: double (nullable = false)
+ - |-- avg_daily_Settings: double (nullable = false)
+ - |-- avg_daily_Submit_Downgrade: double (nullable = false)
+ - |-- avg_daily_Submit_Upgrade: double (nullable = false)
+ - |-- avg_daily_Thumbs_Down: double (nullable = false)
+ - |-- avg_daily_Thumbs_Up: double (nullable = false)
+ - |-- avg_daily_Upgrade: double (nullable = false)
+ - |-- avg_mon_About: double (nullable = false)
+ - |-- avg_mon_Add_Friend: double (nullable = false)
+ - |-- avg_mon_Add_to_Playlist: double (nullable = false)
+ - |-- avg_mon_Downgrade: double (nullable = false)
+ - |-- avg_mon_Error: double (nullable = false)
+ - |-- avg_mon_Help: double (nullable = false)
+ - |-- avg_mon_Home: double (nullable = false)
+ - |-- avg_mon_Logout: double (nullable = false)
+ - |-- avg_mon_NextSong: double (nullable = false)
+ - |-- avg_mon_Roll_Advert: double (nullable = false)
+ - |-- avg_mon_Save_Settings: double (nullable = false)
+ - |-- avg_mon_Settings: double (nullable = false)
+ - |-- avg_mon_Submit_Downgrade: double (nullable = false)
+ - |-- avg_mon_Submit_Upgrade: double (nullable = false)
+ - |-- avg_mon_Thumbs_Down: double (nullable = false)
+ - |-- avg_mon_Thumbs_Up: double (nullable = false)
+ - |-- avg_mon_Upgrade: double (nullable = false)
 
 'label' is what we are trying to predict. '0' represents active users and '1' represents churned users.
 
@@ -112,10 +112,11 @@ Another way to understand highly correlated features is to visualize log data es
 
 ![GitHub Logo](/images/directly_follows_graph.png)
 
-While correlation analysis provides insights into highly correlated features, it's easier to use PCA for feature extraction.
+The Directly Follows graph is a great way to analyze process and get an idea of sequence of page events. It's also good way to see highly correlated features. For e.g. you can see 'Cancel' is always followed by 'Cancellation Confirmation' page.
+
 
 ## PCA
-Perform PCA to evaluate feature importance.
+Perform PCA to evaluate feature importance. While correlation analysis provides insights into highly correlated features, it's easier to use PCA for feature extraction.
 
 ![GitHub Logo](/images/scree_plot.png)
 
@@ -134,7 +135,15 @@ Full dataset provides better result from classification models. I used GCP's Dat
 
 Performed parameter tuning on Logistic Regression, Random Forest Classifier, GBT Classifier and Decision Tree Classifier. Random Forest performs the best and provides highest gain in f1 metric post hyper parameter tuning.
 
+*Baseline model:*
+f1 score for Random Forest Classifier: train dataset 0.724383305188, test dataset 0.725493733818
 
+*Post hyper parameter tuning:*
+f1 train score: 0.912099551257
+f1 test score: 0.83646658194
+Best parameter for max depth: 15
+Best parameter for number of tress: 200
+Best parameter for number of bins: 50
 
 
 
