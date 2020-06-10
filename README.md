@@ -136,14 +136,14 @@ Full dataset provides better result from classification models. I used GCP's Dat
 Performed parameter tuning on Logistic Regression, Random Forest Classifier, GBT Classifier and Decision Tree Classifier. Random Forest performs the best and provides highest gain in f1 metric post hyper parameter tuning.
 
 *Baseline model:*
-f1 score for Random Forest Classifier: train dataset 0.724383305188, test dataset 0.725493733818
+- f1 score for Random Forest Classifier: train dataset 0.724383305188, test dataset 0.725493733818
 
 *Post hyper parameter tuning:*
-f1 train score: 0.912099551257
-f1 test score: 0.83646658194
-Best parameter for max depth: 15
-Best parameter for number of tress: 200
-Best parameter for number of bins: 50
+- f1 train score: 0.912099551257
+- f1 test score: 0.83646658194
+- Best parameter for max depth: 15
+- Best parameter for number of tress: 200
+- Best parameter for number of bins: 50
 
 
 
