@@ -8,6 +8,8 @@ Predict customer churn from customer's log data using Apache Spark on a Spark cl
  - Perform model evaluation using hyper parameter tuning
  - Apply process mining algorithm on event log data to visualize the page events
  
+ [A description of all analysis steps explained in this post here.](https://medium.com/@nikhilnarayan.11/predict-customer-churn-using-pyspark-94b621d106a2?sk=b5e9e1ab0404db5bb8c18dd647184a80)
+ 
  ## Files in this repository:
   - sparkify_EDA.ipynb: Jupyter Notebook containing explorative data analysis using mini sparkify data
   - sparkify_pipeline.ipnyb: Jupyter Notebook containing ETL script and ML script to extract features, train and evaluate models using mini sparkify data
